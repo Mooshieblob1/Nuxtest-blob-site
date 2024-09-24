@@ -24,6 +24,7 @@
             src="assets/icons/aibooru.svg"
             alt="AIBooru"
             class="social-icon"
+            style="margin-top: 4px"
           />
         </a>
         <a
@@ -32,7 +33,11 @@
           rel="noopener"
           class="mr-2"
         >
-          <img src="assets/icons/x.svg" alt="X" class="social-icon" />
+          <Icon
+            name="pajamas:twitter"
+            style="color: #ffcc00; font-size: 35px"
+            class="social-icon"
+          />
         </a>
         <a
           href="https://github.com/Mooshieblob1/"
@@ -40,7 +45,11 @@
           rel="noopener"
           class="mr-2"
         >
-          <img src="assets/icons/github.svg" alt="Github" class="social-icon" />
+          <Icon
+            name="uil:github"
+            style="color: #ffcc00; font-size: 35px"
+            class="social-icon"
+          />
         </a>
       </div>
     </div>
@@ -74,28 +83,49 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted } from "vue";
+import { useHead } from "@vueuse/head";
 
-onMounted(() => {
-  setInterval(() => {
-    function updateClock() {
-      var now = new Date();
-      var hours = now.getHours();
-      var minutes = now.getMinutes();
-      var seconds = now.getSeconds();
-      var timeString =
-        hours.toString().padStart(2, "0") +
-        ":" +
-        minutes.toString().padStart(2, "0") +
-        ":" +
-        seconds.toString().padStart(2, "0");
-      document.getElementById("clock").textContent = timeString;
-    }
-
-    setInterval(updateClock, 1000);
-  }, 1000);
+// SEO Meta Configuration
+useHead({
+  title: 'Blob',
+  meta: [
+    { name: 'description', content: 'My links page' },
+    { property: 'og:title', content: 'Mooshieblobsite' },
+    { property: 'og:description', content: 'My links page' },
+    { property: 'og:image', content: '~/assets/images/page.png' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+  ],
 });
+
+// Clock Update Function
+onMounted(() => {
+  function updateClock() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var timeString =
+      hours.toString().padStart(2, "0") +
+      ":" +
+      minutes.toString().padStart(2, "0") +
+      ":" +
+      seconds.toString().padStart(2, "0");
+    const clockElement = document.getElementById("clock");
+    if (clockElement !== null) {
+      clockElement.textContent = timeString;
+    }
+  }
+
+  // Call updateClock immediately to set the initial time
+  updateClock();
+
+  // Set interval to update the clock every second
+  setInterval(updateClock, 1000);
+});
+
+// Head Configuration
 useHead({
   title: "Mooshieblob",
   meta: [

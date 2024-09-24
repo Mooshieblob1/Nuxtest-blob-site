@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -10,7 +12,8 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css' },
-        { rel: 'stylesheet', href: '/assets/css/style.css' } // Change this to '~/assets/css/style.css'
+        { rel: 'stylesheet', href: '~/assets/css/style.css' }, // Change this to '~/assets/css/style.css'
+        {rel: 'icon', type:'image/x-icon', href: 'favicon.ico'},
       ],
       script: [
         { src: 'https://code.jquery.com/jquery-3.7.1.min.js', integrity: 'sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=', crossorigin: 'anonymous' },
@@ -21,7 +24,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/google-fonts', '@nuxt/eslint', '@pinia/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/google-fonts', '@nuxt/eslint', '@nuxt/icon', '@nuxtjs/axios'],
   css: [
     '~/assets/css/output.css',
     '~/assets/css/style.css',
