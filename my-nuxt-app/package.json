@@ -18,7 +18,8 @@
     "@vueuse/head": "^2.0.0",
     "nuxt": "^3.13.0",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "node-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.18.1",

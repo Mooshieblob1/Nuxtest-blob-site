@@ -8,11 +8,17 @@
         >
           Blog
         </a>
+        <a
+          href="https://comfy.mooshieblob.com"
+          class="text-white hover:text-gray-400 hover:text-xl hover:font-bold transition duration-300"
+        >
+          ComfyUI
+        </a>
       </div>
     </nav>
-    <div class="clock" id="clock"></div>
+    <div id="clock" class="clock" />
     <div class="social-links flex">
-      <img src="assets/images/bloblogo.webp" alt="" class="social-logo" />
+      <img src="assets/images/bloblogo.webp" alt="" class="social-logo">
       <div class="social-icons flex">
         <a
           href="https://safe.aibooru.online/posts?tags=user%3ABlob"
@@ -25,7 +31,7 @@
             alt="AIBooru"
             class="social-icon"
             style="margin-top: 4px"
-          />
+          >
         </a>
         <a
           href="https://x.com/mooshieblob"
@@ -53,30 +59,29 @@
         </a>
       </div>
     </div>
-    <div class="rain front-row"></div>
-    <div class="rain back-row"></div>
+    <div class="rain front-row" />
+    <div class="rain back-row" />
     <img
-      src="assets/images/bg.webp"
       id="bg_girl"
+      src="assets/images/bg.webp"
       alt="Background Image"
       class="h-4 md:h-6 lg:h-9 w-auto"
-    />
+    >
     <footer>
       <div class="footer-text">
         <span>© 2024 Mooshieblob</span>
         <a
-          href="https://iplocation.io/ipv6-compatibility-checker?url=referer"
           id="ipv6"
+          href="https://iplocation.io/ipv6-compatibility-checker?url=referer"
         >
           <img
             src="https://iplocation.io/images/ipv6-non-validated.svg"
             alt="ipv6 ready"
             title="ipv6 ready"
-            border="0"
-            padding="0"
+            style="border: 0; padding: 0;"
             width="36"
             height="18"
-          />
+          >
         </a>
       </div>
     </footer>
@@ -102,11 +107,11 @@ useHead({
 // Clock Update Function
 onMounted(() => {
   function updateClock() {
-    var now = new Date();
-    var hours = now.getHours();
-    var minutes = now.getMinutes();
-    var seconds = now.getSeconds();
-    var timeString =
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const timeString =
       hours.toString().padStart(2, "0") +
       ":" +
       minutes.toString().padStart(2, "0") +
